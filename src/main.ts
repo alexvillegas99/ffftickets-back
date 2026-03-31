@@ -19,7 +19,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   // Configuración de CORS
   app.enableCors({
-    origin:['https://ffftickets.com','http://localhost'],
+    origin:['*'],
      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
      allowedHeaders: 'Content-Type, Accept',
      credentials: true,
