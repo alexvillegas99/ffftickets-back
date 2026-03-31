@@ -12,521 +12,541 @@ const GenerateOrder = (data) => {
     let contenidoHTML = '';
     for (const locality of localities) {
         contenidoHTML += `
-    <tr>
-    <td>${locality.name}</td>
-    <td>${locality.quantity}</td>
-    <td>$ ${locality.price}</td>
-    </tr>
+      <tr style="border-bottom: 1px solid #f0f2f8;">
+        <td style="padding: 12px 0;">${locality.name}</td>
+        <td style="padding: 12px 0; text-align: center;">${locality.quantity}</td>
+        <td style="padding: 12px 0; text-align: right;">$${locality.price}</td>
+      </tr>
     `;
     }
-    return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-  <head>
-  <!--[if gte mso 9]>
-  <xml>
-    <o:OfficeDocumentSettings>
-      <o:AllowPNG/>
-      <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
-  </xml>
-  <![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="x-apple-disable-message-reformatting">
-    <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
-    <title></title>
+    return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pedido Generado - FireTickets</title>
+  <style>
+    /* Reset y estilos base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     
-      <style type="text/css">
-        @media only screen and (min-width: 620px) {
-    .u-row {
-      width: 600px !important;
+    body {
+      font-family: 'Segoe UI', 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f9fc 0%, #eef2f8 100%);
+      margin: 0;
+      padding: 20px;
     }
-    .u-row .u-col {
-      vertical-align: top;
-    }
-  
-    .u-row .u-col-100 {
-      width: 600px !important;
-    }
-  
-  }
-  
-  @media (max-width: 620px) {
-    .u-row-container {
-      max-width: 100% !important;
-      padding-left: 0px !important;
-      padding-right: 0px !important;
-    }
-    .u-row .u-col {
-      min-width: 320px !important;
-      max-width: 100% !important;
-      display: block !important;
-    }
-    .u-row {
-      width: 100% !important;
-    }
-    .u-col {
-      width: 100% !important;
-    }
-    .u-col > div {
+    
+    /* Contenedor principal */
+    .email-container {
+      max-width: 600px;
       margin: 0 auto;
-    }
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  table,
-  tr,
-  td {
-    vertical-align: top;
-    border-collapse: collapse;
-  }
-  
-  p {
-    margin: 0;
-  }
-  
-  .ie-container table,
-  .mso-container table {
-    table-layout: fixed;
-  }
-  
-  * {
-    line-height: inherit;
-  }
-  
-  a[x-apple-data-detectors='true'] {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-  
-  @media (max-width: 480px) {
-    .hide-mobile {
-      max-height: 0px;
+      background: #ffffff;
+      border-radius: 24px;
       overflow: hidden;
-      display: none !important;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
     }
-  }
-  
-  table, td { color: #000000; } #u_body a { color: #f1c40f; text-decoration: underline; } @media (max-width: 480px) { #u_content_image_1 .v-container-padding-padding { padding: 4px !important; } #u_content_image_1 .v-src-width { width: auto !important; } #u_content_image_1 .v-src-max-width { max-width: 50% !important; } #u_content_image_1 .v-text-align { text-align: center !important; } #u_content_text_9 .v-font-size { font-size: 30px !important; } #u_column_1 .v-col-border { border-top: 0px solid transparent !important;border-left: 0px solid transparent !important;border-right: 0px solid transparent !important;border-bottom: 0px solid transparent !important; } #u_content_text_4 .v-container-padding-padding { padding: 25px 10px 0px !important; } #u_content_menu_1 .v-layout-display { display: block !important; } #u_content_menu_1 .v-padding { padding: 5px !important; } #u_content_text_5 .v-container-padding-padding { padding: 25px 10px !important; } }
-      </style>
     
+    /* Header con gradiente */
+    .email-header {
+      background: linear-gradient(135deg, #8a2be2 0%, #591f9e 100%);
+      padding: 32px 24px;
+      text-align: center;
+    }
     
-  
-  <!--[if !mso]><!--><link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet" type="text/css"><!--<![endif]-->
-  
-  </head>
-  
-  <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #000325;color: #000000">
-    <!--[if IE]><div class="ie-container"><![endif]-->
-    <!--[if mso]><div class="mso-container"><![endif]-->
-    <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #000325;width:100%" cellpadding="0" cellspacing="0">
-    <tbody>
-    <tr style="vertical-align: top">
-      <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #000325;"><![endif]-->
+    .logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+    
+    .email-header h1 {
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+    
+    /* Cuerpo del correo */
+    .email-body {
+      padding: 32px 28px;
+    }
+    
+    /* Mensaje de bienvenida */
+    .welcome-message {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(138, 43, 226, 0.2);
+    }
+    
+    .welcome-message p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    
+    .welcome-message p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Secciones */
+    .section {
+      margin-bottom: 28px;
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1b1a46;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+    }
+    
+    .section-title i {
+      font-size: 20px;
+    }
+    
+    /* Tarjeta de cuentas bancarias */
+    .banks-card {
+      background: #f9fafb;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .banks-card h3 {
+      color: #1b1a46;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .bank-item {
+      margin-bottom: 16px;
+      padding: 12px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .bank-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .bank-name {
+      font-weight: 700;
+      color: #8a2be2;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .bank-detail {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+    
+    .bank-detail strong {
+      color: #1b1a46;
+    }
+    
+    /* Tablas */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f9fafb;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .info-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .info-table td:first-child {
+      font-weight: 600;
+      color: #591f9e;
+      width: 40%;
+    }
+    
+    .info-table td:last-child {
+      color: #1f2937;
+    }
+    
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f9fafb;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .items-table th {
+      background: #f3f4f6;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: #1b1a46;
+    }
+    
+    .items-table th:first-child { text-align: left; }
+    .items-table th:nth-child(2) { text-align: center; }
+    .items-table th:last-child { text-align: right; }
+    
+    .items-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .items-table td:first-child { text-align: left; }
+    .items-table td:nth-child(2) { text-align: center; }
+    .items-table td:last-child { text-align: right; }
+    
+    .total-row {
+      background: #f3f4f6;
+      font-weight: 700;
+    }
+    
+    .total-row td:last-child {
+      font-size: 18px;
+      color: #8a2be2;
+    }
+    
+    /* Alerta de tiempo límite */
+    .time-alert {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    
+    .time-alert p {
+      color: #92400e;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    /* Botón de acción */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(95deg, #8a2be2 0%, #591f9e 100%);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 8px 0;
+      text-align: center;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(138, 43, 226, 0.4);
+    }
+    
+    /* Separador */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #8a2be2, #e9d5ff, #8a2be2);
+      margin: 24px 0;
+    }
+    
+    /* Footer */
+    .email-footer {
+      background: #f9fafb;
+      padding: 24px 28px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: #8a2be2;
+    }
+    
+    .footer-contact {
+      color: #9ca3af;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    
+    .footer-contact a {
+      color: #8a2be2;
+      text-decoration: none;
+    }
+    
+    .copyright {
+      color: #9ca3af;
+      font-size: 11px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    /* Responsive */
+    @media (max-width: 550px) {
+      body {
+        padding: 10px;
+      }
       
-    
-    
-  <div class="u-row-container" style="padding: 0px;background-color: #843fa1">
-    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #843fa1;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #843fa1;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #843fa1;"><![endif]-->
-        
-  <!--[if (mso)|(IE)]><td align="center" width="600" class="v-col-border" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-  <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-    <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-    <!--[if (!mso)&(!IE)]><!--><div class="v-col-border" style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
-    
-  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-      <p style="line-height: 140%;"><span style="color: #843fa1; line-height: 19.6px;">Email enviado por FFFTickets </span></p>
+      .email-body {
+        padding: 24px 20px;
+      }
+      
+      .items-table th,
+      .items-table td {
+        padding: 10px 8px;
+      }
+      
+      .info-table td {
+        display: block;
+        padding: 8px 12px;
+      }
+      
+      .info-table td:first-child {
+        width: 100%;
+        padding-bottom: 0;
+      }
+      
+      .footer-links {
+        gap: 12px;
+      }
+      
+      .bank-item {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header con gradiente y logo -->
+    <div class="email-header">
+      <img src="https://corpfourier.s3.us-east-2.amazonaws.com/fff/icono2.png" 
+           alt="FireTickets" 
+           class="logo"
+           style="width: 120px; height: auto;">
+      <h1>¡Pedido Generado!</h1>
     </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-    </div>
-  </div>
-  <!--[if (mso)|(IE)]></td><![endif]-->
-        <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    
+    <!-- Cuerpo principal -->
+    <div class="email-body">
+      <!-- Mensaje de bienvenida -->
+      <div class="welcome-message">
+        <p>✨ <strong>¡Gracias por tu pedido!</strong> ✨</p>
+        <p>Tus entradas serán emitidas cuando confirmemos tu pago. A continuación encontrarás las instrucciones para completar tu compra.</p>
       </div>
-    </div>
-    </div>
-    
-  
-  
-    
-    
-  <div class="u-row-container" style="padding: 0px;background-color: #843fa1">
-    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #843fa1;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #ffffff;"><![endif]-->
+      
+      <!-- Instrucciones de pago -->
+      <div class="section">
+        <div class="section-title">
+          💰 Instrucciones de pago
+        </div>
+        <p style="color: #4b5563; margin-bottom: 16px;">
+          Realiza tu pago en nuestras cuentas bancarias vía transferencia, depósito en ventanilla, red de cajeros Guayaquil, Pichincha y corresponsales Banco del Barrio, Pichincha Mi Vecino.
+        </p>
         
-  <!--[if (mso)|(IE)]><td align="center" width="600" class="v-col-border" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-  <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-    <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-    <!--[if (!mso)&(!IE)]><!--><div class="v-col-border" style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+
+
+<div class="banks-card">
+  <h3>🏦 Cuentas Bancarias</h3>
     
-  <table id="u_content_image_1" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:'Raleway',sans-serif;" align="left">
-          
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
-        <a href="https://ffftickets.com/" target="_blank">
-        <img align="center" border="0"  src="https://firebasestorage.googleapis.com/v0/b/ffftickets-bfc4b.appspot.com/o/FFF%20Imagenes%20Correos%2Ffff-logo.png?alt=media&token=f0ba6a86-603c-4077-b755-cd966d56f946" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 50%;max-width: 300px;" width="300" class="v-src-width v-src-max-width"/>
+  <!-- Banco Pichincha -->
+  <div class="bank-item">
+    <div class="bank-name">
+      <i class="fas fa-university" style="color: #8a2be2;"></i> Banco Pichincha
+    </div>
+    <div class="bank-detail">Producto: <strong>Cuenta de ahorro transaccional</strong></div>
+    <div class="bank-detail">Beneficiario: <strong>Alex Jair Villegas Alvarado</strong></div>
+    <div class="bank-detail">Identificación: <strong>2300687510</strong></div>
+    <div class="bank-detail">Número de cuenta: <strong>2207735772</strong></div>
+    <div class="bank-detail">Correo: <strong>av058554@gmail.com</strong></div>
+  </div>
+    <!-- Banco Guayaquil -->
+  <div class="bank-item">
+    <div class="bank-name">
+      <i class="fas fa-university" style="color: #8a2be2;"></i> Banco Guayaquil
+    </div>
+    <div class="bank-detail">Beneficiario: <strong>Villegas Alvarado Alex Jair</strong></div>
+    <div class="bank-detail">Identificación: <strong>2300687510</strong></div>
+    <div class="bank-detail">Número de cuenta: <strong>0041031943</strong></div>
+    <div class="bank-detail">Correo: <strong>av058554@gmail.com</strong></div>
+  </div>
+
+  <!-- Banco Produbanco -->
+  <div class="bank-item">
+    <div class="bank-name">
+      <i class="fas fa-university" style="color: #8a2be2;"></i> Banco Produbanco
+    </div>
+    <div class="bank-detail">Producto: <strong>Ahorro A La Vista</strong></div>
+    <div class="bank-detail">Beneficiario: <strong>Alex Jair Villegas Alvarado</strong></div>
+    <div class="bank-detail">Identificación: <strong>2300687510</strong></div>
+    <div class="bank-detail">Número de cuenta: <strong>20300751433</strong></div>
+    <div class="bank-detail">Correo: <strong>av058554@gmail.com</strong></div>
+    <div class="bank-detail">Celular: <strong>0999952397</strong></div>
+  </div>
+  
+
+  
+  <!-- San Francisco -->
+  <div class="bank-item">
+    <div class="bank-name">
+      <i class="fas fa-university" style="color: #8a2be2;"></i> Banco San Francisco
+    </div>
+    <div class="bank-detail">Producto: <strong>Ahorro A La Vista</strong></div>
+    <div class="bank-detail">Beneficiario: <strong>Alex Jair Villegas Alvarado</strong></div>
+    <div class="bank-detail">Identificación: <strong>2300687510</strong></div>
+    <div class="bank-detail">Número de cuenta: <strong>0783699110001</strong></div>
+    <div class="bank-detail">Correo: <strong>av058554@gmail.com</strong></div>
+  </div>
+</div>
+        
+        <p style="color: #4b5563; margin-bottom: 8px;">
+          <strong>📸 Carga tu comprobante de pago</strong> desde tu cuenta de FireTickets ingresando a 
+          <a href="https://firetickets.site/perfil/mis-pedidos" style="color: #8a2be2; text-decoration: none; font-weight: 600;">MIS PEDIDOS</a> 
+          o envíalo a <a href="mailto:info@firetickets.site" style="color: #8a2be2; text-decoration: none;">info@firetickets.site</a> 
+          mencionando el número de pedido.
+        </p>
+      </div>
+      
+      <!-- Resumen del pedido -->
+      <div class="section">
+        <div class="section-title">
+          📋 Resumen de tu pedido
+        </div>
+        <table class="info-table">
+          <tr>
+            <td><strong>N° de pedido</strong></td>
+            <td>${order}</td>
+          </tr>
+          <tr>
+            <td><strong>Evento</strong></td>
+            <td>${event}</td>
+          </tr>
+          <tr>
+            <td><strong>Fecha de compra</strong></td>
+            <td>${currentDate}</td>
+          </tr>
+        </table>
+      </div>
+      
+      <!-- Detalle de localidades -->
+      <div class="section">
+        <div class="section-title">
+          🎫 Detalle de entradas
+        </div>
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th>Localidad</th>
+              <th style="text-align: center">Cantidad</th>
+              <th style="text-align: right">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${contenidoHTML}
+            <tr style="border-top: 2px solid #e5e7eb;">
+              <td colspan="2" style="text-align: right; font-weight: 600;">Subtotal</td>
+              <td style="text-align: right;">$${subtotal}</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: right; font-weight: 600;">Cargo por servicio</td>
+              <td style="text-align: right;">$${serviceValue}</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2" style="text-align: right; font-weight: 700;">Total</td>
+              <td style="text-align: right; font-size: 18px; font-weight: 700; color: #8a2be2;">$${total}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Alerta de tiempo límite -->
+      <div class="time-alert">
+        <p>
+          ⏰ <strong>Tienes 48 horas para pagar y enviar tu comprobante</strong>, caso contrario tu pedido será cancelado y los tickets reservados estarán disponibles para la venta.
+        </p>
+        <p style="margin-top: 8px;">
+          Puedes enviar tu comprobante hasta 8 horas antes de comenzar el evento. La acreditación de las entradas demora hasta 48H después de enviado el pago.
+        </p>
+      </div>
+      
+      <!-- Botón de acción -->
+      <div style="text-align: center; margin: 16px 0;">
+        <a href="https://firetickets.site/perfil/mis-pedidos" class="btn">
+          📤 Subir comprobante
         </a>
-      </td>
-    </tr>
-  </table>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-    </div>
-  </div>
-  <!--[if (mso)|(IE)]></td><![endif]-->
-        <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
       </div>
-    </div>
-    </div>
-    
-  
-  
-    
-    
-  <div class="u-row-container" style="padding: 0px;background-color: #843fa1">
-    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #eccafa;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #843fa1;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #eccafa;"><![endif]-->
-        
-  <!--[if (mso)|(IE)]><td align="center" width="600" class="v-col-border" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-  <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-    <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-    <!--[if (!mso)&(!IE)]><!--><div class="v-col-border" style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
-    
-  <table id="u_content_text_9" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 35px; font-weight: 700; color: #000000; line-height: 120%; text-align: center; word-wrap: break-word;">
-      <p style="line-height: 120%;"><span style="color: #843fa1; line-height: 42px;">Pedido Generado</span></p>
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-    </div>
-  </div>
-  <!--[if (mso)|(IE)]></td><![endif]-->
-        <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
-      </div>
-    </div>
-    </div>
-    
-  
-  
-    
-    
-  <div class="u-row-container" style="padding: 0px;background-color: #843fa1">
-    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #843fa1;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
-        
-  <!--[if (mso)|(IE)]><td align="center" width="600" class="v-col-border" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
-  <div id="u_column_1" class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-    <div style="background-color: #ffffff;height: 100%;width: 100% !important;">
-    <!--[if (!mso)&(!IE)]><!--><div class="v-col-border" style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
-    
-  <table id="u_content_text_4" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:25px 50px 0px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 14px; color: #000000; line-height: 140%; text-align: justify; word-wrap: break-word;">
-      <p style="line-height: 140%;"><span style="color: #000000; line-height: 19.6px;">Gracias por tu pedido. <strong>Tus entradas serán emitidas cuando confirmemos tu pago. </strong></span></p>
-  <p style="line-height: 140%;"> </p>
-  <p style="line-height: 140%;"><span style="color: #000000; line-height: 19.6px;">Realiza tu pago en nuestras cuentas bancarias vía transferencia, depósito en ventanilla, red de cajeros Guayaquil, Pichincha y corresponsales Banco del Barrio, Pichincha Mi Vecino.</span></p>
-  <p style="line-height: 140%;"> </p>
-  <p style="line-height: 140%;"><strong>Cuentas Bancarias</strong></p>
-  <ul>
-  <li style="line-height: 19.6px;"><strong>Banco Pichincha</strong>
-  <ul>
-  <li style="line-height: 19.6px;">Beneficiario: <strong>FFFTickets SAS</strong></li>
-  <li style="line-height: 19.6px;">RUC:<strong> 1891811196001</strong></li>
-  <li style="line-height: 19.6px;">Tipo de cuenta: <strong>Ahorros</strong></li>
-  <li style="line-height: 19.6px;">Numero de cuenta: <strong>2210349735</strong></li>
-  </ul>
-  </li>
-  <li style="line-height: 19.6px;"><strong>Banco Guayaquil</strong>
-  <ul>
-  <li style="line-height: 19.6px;">Beneficiario: <strong>FFFTickets SAS</strong></li>
-  <li style="line-height: 19.6px;">RUC:<strong> 1891811196001</strong></li>
-  <li style="line-height: 19.6px;">Tipo de cuenta: <strong>Ahorros</strong></li>
-  <li style="line-height: 19.6px;">Numero de cuenta: <strong>23285538</strong></li>
-  </ul>
-  </li>
-  </ul>
-  <p style="line-height: 140%;"> </p>
-  <p style="line-height: 140%;"><span style="color: #000000; line-height: 19.6px;">Carga tu comprobante de pago desde tu cuenta de FFFTickets ingresando a <strong><span style="color: #843fa1; line-height: 19.6px;"><a rel="noopener" href="https://ffftickets.com/" target="_blank" style="color: #843fa1;">MIS PEDIDOS</a></span></strong> o envialo a <span style="color: #843fa1; line-height: 19.6px;"><a rel="noopener" href="mailto:tickets@ffftickets.com" target="_blank" style="color: #843fa1;"><span style="line-height: 19.6px;">tickets@ffftickets.com</span></a></span> mencionando el nombre de la persona que realizó la compra y el número de pedido. </span></p>
-  <p style="line-height: 140%;"> </p>
-  <p style="line-height: 140%;"><span style="color: #000000; line-height: 19.6px;">Los detalles de tu pedido se muestran a continuacion:</span></p>
-  <p style="line-height: 140%;"> </p>
-  <p style="line-height: 140%;"> </p>
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div>
       
-  <html>
-     <table width="75%" align="center" border="" cellpadding="5" cellspacing="0">
-      <tr>
-  <td><b>Pedido</b></td>
-   <td colspan="2">${order}</td>
-  
-      </tr>
-      <tr>   
-  <tr>
-  <td><b>Evento</b></td>
-   <td colspan="2">${event}</td>
-  
-      </tr>
-  <tr>
-     <td><b>Localidad</b></td>
-     <td><b>Cantidad</b></td>
-     <td><b>Precio</b></td>
-  </tr>
-  ${contenidoHTML}
-      <tr>
-      <tr>
-  <td colspan="2"><b>Subtotal</b></td>
-  <td>$ ${subtotal}</td>
-      </tr>
-  <tr>
-  <td colspan="2"><b>Cargo por Servicio</b></td>
-  <td>$ ${serviceValue}</td>
-      </tr>
-  <tr>
-  <td colspan="2"><b>Total</b></td>
-  <td>$ ${total}</td>
-      </tr>
-  <tr>     
-    </table>
-  </html>
-  
-  
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:25px 25px 10px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 14px; line-height: 140%; text-align: justify; word-wrap: break-word;">
-      <p style="line-height: 140%;">Tienes 48 horas para pagar y enviar tu comprobante, caso contrario tu pedido será cancelado y los tickets reservados estarán disponibles para la venta. Puedes enviar tu comprobante hasta 8 horas antes de comenzar el evento, caso contrario no nos responsabilizamos del envío de tus entradas. La acreditación de las entradas demora hasta 48H después de enviado el pago. </p>
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 0px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 2px solid #843fa1;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-      <tbody>
-        <tr style="vertical-align: top">
-          <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-            <span>&#160;</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table id="u_content_menu_1" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px;font-family:'Raleway',sans-serif;" align="left">
-          
-  <div class="menu" style="text-align:center">
-  <!--[if (mso)|(IE)]><table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center"><tr><![endif]-->
-  
-    <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-    
-      <a href="https://ffftickets.com/terminos-y-condiciones" target="_blank" style="padding:5px;display:inline-block;color:#000000;font-size:12px;font-weight: 700;text-decoration:none"  class="v-padding v-font-size v-layout-display">
-        TÉRMINOS Y CONDICIONES
-      </a>
-    
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-      <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-      <span style="padding:5px;display:inline-block;color:#843fa1;font-size:12px;font-weight: 700;" class="v-padding v-font-size hide-mobile">
-        |
-      </span>
-      <!--[if (mso)|(IE)]></td><![endif]-->
-    
-  
-    <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-    
-      <a href="https://ffftickets.com/nosotros" target="_blank" style="padding:5px;display:inline-block;color:#000000;font-size:12px;font-weight: 700;text-decoration:none"  class="v-padding v-font-size v-layout-display">
-        NOSOTROS
-      </a>
-    
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-      <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-      <span style="padding:5px;display:inline-block;color:#843fa1;font-size:12px;font-weight: 700;" class="v-padding v-font-size hide-mobile">
-        |
-      </span>
-      <!--[if (mso)|(IE)]></td><![endif]-->
-    
-  
-    <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-    
-      <a href="https://ffftickets.com/" target="_blank" style="padding:5px;display:inline-block;color:#000000;font-size:12px;font-weight: 700;text-decoration:none"  class="v-padding v-font-size v-layout-display">
-        PREGUNTAS FRECUENTES
-      </a>
-    
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-      <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-      <span style="padding:5px;display:inline-block;color:#843fa1;font-size:12px;font-weight: 700;" class="v-padding v-font-size hide-mobile">
-        |
-      </span>
-      <!--[if (mso)|(IE)]></td><![endif]-->
-    
-  
-    <!--[if (mso)|(IE)]><td style="padding:5px"><![endif]-->
-    
-      <a href="https://ffftickets.com/" target="_blank" style="padding:5px;display:inline-block;color:#000000;font-size:12px;font-weight: 700;text-decoration:none"  class="v-padding v-font-size v-layout-display">
-        CONTÁCTENOS
-      </a>
-    
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-  
-  <!--[if (mso)|(IE)]></tr></table><![endif]-->
-  </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table id="u_content_text_5" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:25px 50px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 14px; color: #ffffff; line-height: 160%; text-align: center; word-wrap: break-word;">
-      <p style="font-size: 14px; line-height: 160%;"><span style="color: #000000; line-height: 22.4px;">Si tiene alguna pregunta, envíenos un correo electrónico a <strong>info@ffftickets.com </strong></span></p>
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-    </div>
-  </div>
-  <!--[if (mso)|(IE)]></td><![endif]-->
-        <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+      <div class="divider"></div>
+      
+      <div style="font-size: 12px; color: #9ca3af; text-align: center; line-height: 1.5;">
+        <p>Este es un correo automático de FireTickets. Por favor no respondas a este mensaje.</p>
+        <p style="margin-top: 8px;">Si tienes preguntas, contáctanos a través de nuestra página web.</p>
       </div>
     </div>
-    </div>
     
-  
-  
-    
-    
-  <div class="u-row-container" style="padding: 0px;background-color: #843fa1">
-    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #843fa1;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
-        
-  <!--[if (mso)|(IE)]><td align="center" width="600" class="v-col-border" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-  <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-    <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-    <!--[if (!mso)&(!IE)]><!--><div class="v-col-border" style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
-    
-  <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-    <tbody>
-      <tr>
-        <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Raleway',sans-serif;" align="left">
-          
-    <div class="v-text-align v-font-size" style="font-size: 14px; line-height: 140%; text-align: center; word-wrap: break-word;">
-      <p style="line-height: 140%;"><span style="color: #ffffff; line-height: 19.6px;">© 2023 Copyright FFFTickets </span></p>
-    </div>
-  
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-    </div>
-  </div>
-  <!--[if (mso)|(IE)]></td><![endif]-->
-        <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    <!-- Footer -->
+    <div class="email-footer">
+      <div class="footer-links">
+        <a href="https://firetickets.site/terminos-y-condiciones">Términos y condiciones</a>
+        <span style="color: #d1d5db;">|</span>
+        <a href="https://firetickets.site/nosotros">Nosotros</a>
+        <span style="color: #d1d5db;">|</span>
+        <a href="https://firetickets.site/preguntas-frecuentes">Preguntas frecuentes</a>
+        <span style="color: #d1d5db;">|</span>
+        <a href="https://firetickets.site/contacto">Contacto</a>
+      </div>
+      
+      <div class="footer-contact">
+        ¿Necesitas ayuda? Escríbenos a 
+        <a href="mailto:info@firetickets.site">info@firetickets.site</a>
+      </div>
+      
+      <div class="copyright">
+        © 2024 FireTickets. Todos los derechos reservados.
       </div>
     </div>
-    </div>
-    
-  
-  
-      <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-      </td>
-    </tr>
-    </tbody>
-    </table>
-    <!--[if mso]></div><![endif]-->
-    <!--[if IE]></div><![endif]-->
-  </body>
-  
-  </html>
-  `;
+  </div>
+</body>
+</html>`;
 };
 exports.GenerateOrder = GenerateOrder;
 //# sourceMappingURL=generate_order.js.map
