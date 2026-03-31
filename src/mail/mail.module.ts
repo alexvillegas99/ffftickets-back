@@ -24,7 +24,7 @@ import { AmazonS3Module } from 'src/amazon-s3/amazon-s3.module';
           },
         },
         defaults: {
-          from: `"FFF Tickets" <${configService.get(MAIL_USER)}>`, 
+          from: `"FireTickets" <${configService.get(MAIL_USER)}>`, 
         },
       }),
      

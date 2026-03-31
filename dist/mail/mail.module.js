@@ -33,7 +33,7 @@ MailModule = __decorate([
                         },
                     },
                     defaults: {
-                        from: `"FFF Tickets" <${configService.get(config_env_1.MAIL_USER)}>`,
+                        from: `"FireTickets" <${configService.get(config_env_1.MAIL_USER)}>`,
                     },
                 }),
             }),

@@ -60,7 +60,7 @@ export class MailService {
     this.logger.log('Enviando email login: ', email);
     const emailData = {
       to: email,
-      subject: 'Notificación de inicio de sesión FFF Tickets',
+      subject: 'Inicio de sesión FireTickets',
       html: loginMail(loginMailDto),
     };
     this.sendEmail(emailData, loginMailDto);
@@ -70,7 +70,7 @@ export class MailService {
     this.logger.log('Enviando email login: ', email);
     const emailData = {
       to: email,
-      subject: 'Notificación de registro FFF Tickets',
+      subject: 'Registro FireTickets',
       html: RegisterTemplate(registerDto),
     };
     this.sendEmail(emailData, registerDto);
@@ -95,7 +95,7 @@ export class MailService {
     try {
       const emailData = {
         to: email,
-        subject: 'Notificación de compra de tickets',
+        subject: 'TICKETS FIRETICKETS',
         html: await sendTickets(newData),
       };
       this.sendEmail(emailData, ticketsMailDto);
@@ -108,7 +108,7 @@ export class MailService {
 
       const emailData = {
         to: email,
-        subject: 'Notificación orden completada FFFTICKETS',
+        subject: 'Notificación orden completada FireTickets',
         html: await OrderComplete(orderCompleteDto),
       };
       this.sendEmail(emailData, orderCompleteDto);
@@ -122,7 +122,7 @@ export class MailService {
 
       const emailData = {
         to: email,
-        subject: 'Notificación orden generada FFFTICKETS',
+        subject: 'Orden generada FireTickets',
         html: await GenerateOrder(generateOrderDto),
       };
       this.sendEmail(emailData, generateOrderDto);
@@ -134,7 +134,7 @@ export class MailService {
       this.logger.log('Enviando email nueva contraseña: ', email);
       const emailData = {
         to: email,
-        subject: 'Notificación nueva contraseña FFF Tickets',
+        subject: 'Nueva contraseña FFF Tickets',
         html: GetNewPasswordTemplate(newPasswordDto),
       };
       this.sendEmail(emailData, newPasswordDto);
@@ -145,7 +145,7 @@ export class MailService {
       this.logger.log('Enviando email contraseña cambiada: ', email);
       const emailData = {
         to: email,
-        subject: 'Notificación contraseña cambiada FFF Tickets',
+        subject: 'Contraseña cambiada FireTickets',
         html: PasswordUpdate(),
       };
      

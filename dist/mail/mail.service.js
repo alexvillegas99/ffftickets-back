@@ -53,7 +53,7 @@ let MailService = MailService_1 = class MailService {
         this.logger.log('Enviando email login: ', email);
         const emailData = {
             to: email,
-            subject: 'Notificación de inicio de sesión FFF Tickets',
+            subject: 'Inicio de sesión FireTickets',
             html: (0, templates_1.loginMail)(loginMailDto),
         };
         this.sendEmail(emailData, loginMailDto);
@@ -63,7 +63,7 @@ let MailService = MailService_1 = class MailService {
         this.logger.log('Enviando email login: ', email);
         const emailData = {
             to: email,
-            subject: 'Notificación de registro FFF Tickets',
+            subject: 'Registro FireTickets',
             html: (0, templates_1.RegisterTemplate)(registerDto),
         };
         this.sendEmail(emailData, registerDto);
@@ -76,7 +76,7 @@ let MailService = MailService_1 = class MailService {
         try {
             const emailData = {
                 to: email,
-                subject: 'Notificación de compra de tickets',
+                subject: 'TICKETS FIRETICKETS',
                 html: await (0, sendTickets_1.sendTickets)(newData),
             };
             this.sendEmail(emailData, ticketsMailDto);
@@ -89,7 +89,7 @@ let MailService = MailService_1 = class MailService {
             this.logger.log('Enviando email orden completada: ', email);
             const emailData = {
                 to: email,
-                subject: 'Notificación orden completada FFFTICKETS',
+                subject: 'Notificación orden completada FireTickets',
                 html: await (0, order_completed_1.OrderComplete)(orderCompleteDto),
             };
             this.sendEmail(emailData, orderCompleteDto);
@@ -102,7 +102,7 @@ let MailService = MailService_1 = class MailService {
             this.logger.log('Enviando email orden generada: ', email);
             const emailData = {
                 to: email,
-                subject: 'Notificación orden generada FFFTICKETS',
+                subject: 'Orden generada FireTickets',
                 html: await (0, generate_order_1.GenerateOrder)(generateOrderDto),
             };
             this.sendEmail(emailData, generateOrderDto);
@@ -115,7 +115,7 @@ let MailService = MailService_1 = class MailService {
             this.logger.log('Enviando email nueva contraseña: ', email);
             const emailData = {
                 to: email,
-                subject: 'Notificación nueva contraseña FFF Tickets',
+                subject: 'Nueva contraseña FFF Tickets',
                 html: (0, templates_1.GetNewPasswordTemplate)(newPasswordDto),
             };
             this.sendEmail(emailData, newPasswordDto);
@@ -127,13 +127,13 @@ let MailService = MailService_1 = class MailService {
             this.logger.log('Enviando email contraseña cambiada: ', email);
             const emailData = {
                 to: email,
-                subject: 'Notificación contraseña cambiada FFF Tickets',
+                subject: 'Contraseña cambiada FireTickets',
                 html: (0, templates_1.PasswordUpdate)(),
             };
             this.sendEmail(emailData, email);
         }
         catch (error) {
-            console.log(...oo_oo(`737908076_154_6_154_24_4`, error));
+            console.log(...oo_oo(`1220542359_154_6_154_24_4`, error));
         }
     }
     async generarQRBase64(qrCodeData, event) {
@@ -147,7 +147,7 @@ let MailService = MailService_1 = class MailService {
             return img.imageUrl;
         }
         catch (error) {
-            console.error(...oo_tx(`737908076_169_6_171_7_11`, `Error al generar el código QR en formato base64: ${error}`));
+            console.error(...oo_tx(`1220542359_169_6_171_7_11`, `Error al generar el código QR en formato base64: ${error}`));
             return '';
         }
     }
